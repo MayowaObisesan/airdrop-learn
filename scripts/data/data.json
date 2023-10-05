@@ -1,0 +1,40 @@
+{
+    "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266": {
+        "leaf": "0x4709167b86d1ce0ef63f1a611032e8f721ed57d139d02f06a7df7181c2aed341",
+        "proof": [
+            "0xab3259b2acbfa3ccede67c4f66cd402424de2e52a33630fcb84ceb0a4e2ac30f",
+            "0xe0b782e241c337fea2ce51e98e9a7267e2ae9d0038db9f2233c35ddcc1745568",
+            "0x0af42efb33fc8f105d4501d338575d77a332d43c0c4ccf9ee710fa40eaa1fb93"
+        ]
+    },
+    "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": {
+        "leaf": "0xab3259b2acbfa3ccede67c4f66cd402424de2e52a33630fcb84ceb0a4e2ac30f",
+        "proof": [
+            "0x4709167b86d1ce0ef63f1a611032e8f721ed57d139d02f06a7df7181c2aed341",
+            "0xe0b782e241c337fea2ce51e98e9a7267e2ae9d0038db9f2233c35ddcc1745568",
+            "0x0af42efb33fc8f105d4501d338575d77a332d43c0c4ccf9ee710fa40eaa1fb93"
+        ]
+    },
+    "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": {
+        "leaf": "0x38eae58682003b33d8db0516a57eeedd76c2ff809ff0940334167a42985a62ea",
+        "proof": [
+            "0x889f163862855e69ef69369a17dafcc7916df42b5b2dbb5d5893893127c6d630",
+            "0x9038be7733e59653b1584e94f4cacc81cbcdda4181567c608b82bd1393d914a3",
+            "0x0af42efb33fc8f105d4501d338575d77a332d43c0c4ccf9ee710fa40eaa1fb93"
+        ]
+    },
+    "0x90F79bf6EB2c4f870365E785982E1f101E93b906": {
+        "leaf": "0x889f163862855e69ef69369a17dafcc7916df42b5b2dbb5d5893893127c6d630",
+        "proof": [
+            "0x38eae58682003b33d8db0516a57eeedd76c2ff809ff0940334167a42985a62ea",
+            "0x9038be7733e59653b1584e94f4cacc81cbcdda4181567c608b82bd1393d914a3",
+            "0x0af42efb33fc8f105d4501d338575d77a332d43c0c4ccf9ee710fa40eaa1fb93"
+        ]
+    },
+    "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65": {
+        "leaf": "0x0af42efb33fc8f105d4501d338575d77a332d43c0c4ccf9ee710fa40eaa1fb93",
+        "proof": [
+            "0x8a9322a84bd5300c340d52c81616c0093259b73cf14b4951ecc39b023c88fc21"
+        ]
+    }
+}
