@@ -51,4 +51,4 @@ hashData("scripts/userdata/data.csv");
 export { Data };
 
 import { solidityPackedSha256 } from "ethers";
-import { Data } from "./dataInterface";
+import { AirDropData } from "./interface";
