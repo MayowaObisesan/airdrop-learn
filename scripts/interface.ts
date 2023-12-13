@@ -1,5 +1,5 @@
 export interface AirDropData {
-    hash?: string;
+    // hash?: string;
     address: string;
-    amount: string;
+    amount: number;
 }

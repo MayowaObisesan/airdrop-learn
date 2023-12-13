@@ -4,7 +4,7 @@ import csv from "csv-parser";
 import * as fs from "fs";
 import { keccak256, solidityPackedSha256 } from "ethers";
 import path from "path";
-import { Data } from "./hashData";
+import { AirDropData } from "./interface";
 
 //This might not be used
 
@@ -13,16 +13,16 @@ export interface AddressProof {
     proof: string[];
 }
 
-const csvfile = path.join(__dirname, "data/data.csv");
+const csvfile = path.join(__dirname, "./data/data.csv");
 
 async function generateMerkleTree(csvFilePath: string): Promise<void> {
-    const data: Data[] = [];
+    const data: AirDropData[] = [];
 
     // Read the CSV file and store the data in an array
     await new Promise((resolve, reject) => {
         fs.createReadStream(csvFilePath)
             .pipe(csv())
-            .on("data", (row: Data) => {
+            .on("data", (row: AirDropData) => {
                 data.push(row);
             })
             .on("end", resolve)
@@ -32,10 +32,12 @@ async function generateMerkleTree(csvFilePath: string): Promise<void> {
     let leaves: string[] = [];
     // Hash the data using the Solidity keccak256 function
     for (const row of data) {
+        // console.log(Object.values(row)[0]);
         leaf = solidityPackedSha256(
-            ["address", "uint256", "bytes32"],
-            [row.address, row.amount, row.hash]
+            ["address", "uint256"],
+            [Object.values(row)[0], row.amount]
         );
+        // console.log(leaf);
         leaves.push(leaf);
     }
 
@@ -44,7 +46,7 @@ async function generateMerkleTree(csvFilePath: string): Promise<void> {
     const addressProofs: { [address: string]: AddressProof } = {};
     data.forEach((row, index) => {
         const proof = tree.getProof(leaves[index]);
-        addressProofs[row.address] = {
+        addressProofs[Object.values(row)[0]] = {
             leaf: "0x" + leaves[index].toString(),
             proof: proof.map((p) => "0x" + p.data.toString("hex")),
         };
@@ -62,7 +64,7 @@ async function generateMerkleTree(csvFilePath: string): Promise<void> {
     });
 
     // Write a JSON object mapping addresses to data to a file
-    const addressData: { [address: string]: Data } = {};
+    const addressData: { [address: string]: AirDropData } = {};
     data.forEach((row) => {
         addressData[row.address] = row;
     });
